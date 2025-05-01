@@ -21,7 +21,7 @@ TaskVibe is a unique to-do app designed to streamline task management with a mod
 
 ## 🌐 Live Demo
 
-Try TaskVibe live at: [https://manishrajdoot.github.io/taskvibe](https://manishrajdoot.github.io/taskvibe)
+Try TaskVibe live at: [https://manishrajdoot.github.io/TaskVibe](https://manishrajdoot.github.io/TaskVibe)
 
 *Note*: If the live demo link isn’t active, enable GitHub Pages in the repository settings (see "Enable GitHub Pages" under Installation).
 
