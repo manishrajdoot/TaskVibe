@@ -1,0 +1,16 @@
+{
+    "name": "TaskVibe",
+    "short_name": "TaskVibe",
+    "description": "A unique to-do app with task management and theme switching",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#f4f7f6",
+    "theme_color": "#667eea",
+    "icons": [
+        {
+            "src": "https://cdn-icons-png.flaticon.com/512/3094/3094139.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

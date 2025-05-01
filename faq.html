@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskVibe - FAQ</title>
+    <link rel="stylesheet" href="faq.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3094/3094139.png" type="image/png">
+</head>
+<body>
+    <div class="faq-container">
+        <header class="faq-header">
+            <h1><i class='bx bxs-star header-icon'></i> TaskVibe FAQ</h1>
+        </header>
+        <section class="faq-content">
+            <div class="faq-item">
+                <h2>How do I add a new task?</h2>
+                <p>Enter the task description in the input field at the top, optionally add a comment, date, and time, and click "Add Task" or press Enter.</p>
+            </div>
+            <div class="faq-item">
+                <h2>How can I mark a task as completed?</h2>
+                <p>Click the checkbox next to the task to mark it as completed. Click again to mark it as active.</p>
+            </div>
+            <div class="faq-item">
+                <h2>What do the filter buttons do?</h2>
+                <p>The "All" button shows all tasks, "Active" shows only incomplete tasks, and "Completed" shows only completed tasks.</p>
+            </div>
+            <div class="faq-item">
+                <h2>How do I switch between light and dark themes?</h2>
+                <p>Click the plane toggle button in the top-right corner to switch between light and dark themes.</p>
+            </div>
+            <div class="faq-item">
+                <h2>Are my tasks saved automatically?</h2>
+                <p>Yes, tasks are saved to your browser's local storage and persist across page reloads.</p>
+            </div>
+            <div class="faq-item">
+                <h2>What happens when a task's due date and time are reached?</h2>
+                <p>Tasks with a set due date and time are automatically deleted once the specified time is reached.</p>
+            </div>
+        </section>
+    </div>
+    <script>
+        // Apply theme from localStorage
+        const htmlElement = document.documentElement;
+        const storedTheme = localStorage.getItem('taskVibeTheme');
+        let themeToApply = storedTheme || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        htmlElement.setAttribute('data-theme', themeToApply);
+
+        // Listen for theme changes in the main window
+        window.addEventListener('storage', (event) => {
+            if (event.key === 'taskVibeTheme') {
+                htmlElement.setAttribute('data-theme', event.newValue);
+            }
+        });
+    </script>
+</body>
+</html>

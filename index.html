@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#667eea">
+    <title>TaskVibe - Your Unique To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3094/3094139.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3094/3094139.png">
+</head>
+<body class="container">
+    <!-- Startup Loader (From Uiverse.io by Novaxlo) -->
+    <div class="earth" id="startup-loader">
+        <div class="earth-loader">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                <path
+                    transform="translate(100 100)"
+                    d="M29.4,-17.4C33.1,1.8,27.6,16.1,11.5,31.6C-4.7,47,-31.5,63.6,-43,56C-54.5,48.4,-50.7,16.6,-41,-10.9C-31.3,-38.4,-15.6,-61.5,-1.4,-61C12.8,-60.5,25.7,-36.5,29.4,-17.4Z"
+                    fill="#7CC133"
+                ></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                <path
+                    transform="translate(100 100)"
+                    d="M31.7,-55.8C40.3,-50,45.9,-39.9,49.7,-29.8C53.5,-19.8,55.5,-9.9,53.1,-1.4C50.6,7.1,43.6,14.1,41.8,27.6C40.1,41.1,43.4,61.1,37.3,67C31.2,72.9,15.6,64.8,1.5,62.2C-12.5,59.5,-25,62.3,-31.8,56.7C-38.5,51.1,-39.4,37.2,-49.3,26.3C-59.1,15.5,-78,7.7,-77.6,0.2C-77.2,-7.2,-57.4,-14.5,-49.3,-28.4C-41.2,-42.4,-44.7,-63,-38.5,-70.1C-32.2,-77.2,-16.1,-70.8,-2.3,-66.9C11.6,-63,23.1,-61.5,31.7,-55.8Z"
+                    fill="#7CC133"
+                ></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                <path
+                    transform="translate(100 100)"
+                    d="M30.6,-49.2C42.5,-46.1,57.1,-43.7,67.6,-35.7C78.1,-27.6,84.6,-13.8,80.3,-2.4C76.1,8.9,61.2,17.8,52.5,29.1C43.8,40.3,41.4,53.9,33.7,64C26,74.1,13,80.6,2.2,76.9C-8.6,73.1,-17.3,59,-30.6,52.1C-43.9,45.3,-61.9,45.7,-74.1,38.2C-86.4,30.7,-92.9,15.4,-88.6,2.5C-84.4,-10.5,-69.4,-20.9,-60.7,-34.6C-52.1,-48.3,-49.8,-65.3,-40.7,-70C-31.6,-74.8,-15.8,-67.4,-3.2,-61.8C9.3,-56.1,18.6,-52.3,30.6,-49.2Z"
+                    fill="#7CC133"
+                ></path>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                <path
+                    transform="translate(100 100)"
+                    d="M39.4,-66C48.6,-62.9,51.9,-47.4,52.9,-34.3C53.8,-21.3,52.4,-10.6,54.4,1.1C56.3,12.9,61.7,25.8,57.5,33.2C53.2,40.5,39.3,42.3,28.2,46C17,49.6,8.5,55.1,1.3,52.8C-5.9,50.5,-11.7,40.5,-23.6,37.2C-35.4,34,-53.3,37.5,-62,32.4C-70.7,27.4,-70.4,13.7,-72.4,-1.1C-74.3,-15.9,-78.6,-31.9,-73.3,-43C-68.1,-54.2,-53.3,-60.5,-39.5,-60.9C-25.7,-61.4,-12.9,-56,1.1,-58C15.1,-59.9,30.2,-69.2,39.4,-66Z"
+                    fill="#7CC133"
+                ></path>
+            </svg>
+        </div>
+        <p>Loading TaskVibe...</p>
+    </div>
+
+    <div class="app-container" style="display: none;">
+        
+        <label class="plane-switch" id="theme-toggle" aria-label="Switch theme">
+            <input type="checkbox">
+            <div>
+                <div>
+                    <svg viewBox="0 0 13 13">
+                        <path d="M1.55989957,5.41666667 L5.51582215,5.41666667 L4.47015462,0.108333333 L4.47015462,0.108333333 C4.47015462,0.0634601974 4.49708054,0.0249592654 4.5354546,0.00851337035 L4.57707145,0 L5.36229752,0 C5.43359776,0 5.50087375,0.028779451 5.55026392,0.0782711996 L5.59317877,0.134368264 L7.13659662,2.81558333 L8.29565964,2.81666667 C8.53185377,2.81666667 8.72332694,3.01067661 8.72332694,3.25 C8.72332694,3.48932339 8.53185377,3.68333333 8.29565964,3.68333333 L7.63589819,3.68225 L8.63450135,5.41666667 L11.9308317,5.41666667 C12.5213171,5.41666667 13,5.90169152 13,6.5 C13,7.09830848 12.5213171,7.58333333 11.9308317,7.58333333 L8.63450135,7.58333333 L7.63589819,9.31666667 L8.29565964,9.31666667 C8.53185377,9.31666667 8.72332694,9.51067661 8.72332694,9.75 C8.72332694,9.98932339 8.53185377,10.1833333 8.29565964,10.1833333 L7.13659662,10.1833333 L5.59317877,12.8656317 C5.55725264,12.9280353 5.49882018,12.9724157 5.43174295,12.9907056 L5.36229752,13 L4.57707145,13 L4.55610333,12.9978962 C4.51267695,12.9890959 4.48069792,12.9547924 4.47230803,12.9134397 L4.47223088,12.8704208 L5.51582215,7.58333333 L1.55989957,7.58333333 L0.891288881,8.55114605 C0.853775374,8.60544678 0.798421006,8.64327676 0.73629202,8.65879796 L0.672314689,8.66666667 L0.106844414,8.66666667 L0.0715243949,8.66058466 L0.0715243949,8.66058466 C0.0297243066,8.6457608 0.00275502199,8.60729104 0,8.5651586 L0.00593007386,8.52254537 L0.580855011,6.85813984 C0.64492547,6.67265611 0.6577034,6.47392717 0.619193545,6.28316421 L0.580694768,6.14191703 L0.00601851064,4.48064746 C0.00203480725,4.469ilhar,4.45701613 0,4.44481314 C0,4.39994001 0.0269259152,4.36143908 0.0652999725,4.34499318 L0.106916826,4.33647981 L0.672546853,4.33647981 C0.737865848,4.34647981 0.80011301,4.36066329 0.848265401,4.40322477 L0.89131128,4.45169723 L1.55989957,5.41666667 Z" fill="currentColor"></path>
+                    </svg>
+                </div>
+                <span class="street-middle"></span>
+                <span class="cloud"></span>
+                <span class="cloud two"></span>
+            </div>
+        </label>
+
+        
+        <button class="faq-button" id="faq-button" aria-label="Open FAQ">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path
+                    d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l-42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"
+                ></path>
+            </svg>
+            <span class="tooltip">FAQ</span>
+        </button>
+
+        <header class="app-header">
+            <h1><i class='bx bxs-star header-icon'></i> TaskVibe</h1>
+        </header>
+
+        <main class="todo-container">
+            <form id="new-task-form" class="task-form">
+                <input type="text" id="new-task-input" placeholder="Add a new task..." aria-label="New task input" required>
+                <input type="text" id="new-task-comment" placeholder="Add a comment (optional)..." aria-label="Task comment input">
+                <div class="datetime-inputs">
+                    <input type="date" id="new-task-date" aria-label="Task due date" min="2025-05-01">
+                    <input type="time" id="new-task-time" aria-label="Task due time">
+                </div>
+                <button type="submit" class="add-task-btn" aria-label="Add new task">
+                    <i class='bx bx-plus'></i> Add Task
+                </button>
+            </form>
+
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all" aria-label="Show all tasks">All</button>
+                <button class="filter-btn" data-filter="active" aria-label="Show active tasks">Active</button>
+                <button class="filter-btn" data-filter="completed" aria-label="Show completed tasks">Completed</button>
+            </div>
+
+            <section class="task-list-section">
+                <h2>Tasks</h2>
+                <ul id="task-list" class="task-list"></ul>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <!-- Modified from Uiverse.io by muhammad_1180 -->
+            <form id="email-form" class="max-w-xl mx-auto px-4 sm:px-0">
+                <label class="block text-gray-500 dark:text-gray-400 text-sm font-medium mb-2">
+                    Stay Updated with TaskVibe
+                </label>
+                <div class="relative">
+                    <input
+                        aria-label="Email subscription input"
+                        placeholder="Enter your email for updates"
+                        class="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 transition-all duration-200 placeholder-gray-400 dark:placeholder-gray-500 text-gray-900 dark:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 shadow-sm"
+                        name="subscriber-email"
+                        type="email"
+                        required
+                    />
+                    <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                        <svg
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5 text-gray-400 dark:text-gray-500"
+                        >
+                            <path
+                                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                                stroke-width="2"
+                                stroke-linejoin="round"
+                                stroke-linecap="round"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
+                <button type="submit" class="mt-2 w-full px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all duration-200">
+                    Subscribe
+                </button>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                    We'll never share your email with others.
+                </p>
+            </form>
+            <div class="footer-info">
+                <h3><i class='bx bxs-star header-icon'></i> TaskVibe</h3>
+                <p>Developed by <a href="https://www.instagram.com/manish.rajdoot/" target="_blank" rel="noopener">Manish Rajdoot</a></p>
+                <p>© 2025 TaskVibe. All rights reserved.</p>
+            </div>
+            <button id="install-btn" class="install-btn" aria-label="Install TaskVibe" style="display: none;">
+                <i class='bx bx-download'></i> Install TaskVibe
+            </button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+    emailjs.init('73W2Nb-k2Ax7dNOxI'); // Public Key यहाँ डालें
+</script>
+</body>
+</html>
